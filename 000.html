@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой веб-сайт</title>
+    <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; } header { background-color: #333; color: white; padding: 10px; text-align: center; } nav { background-color: #f1f1f1; overflow: hidden; } nav a { float: left; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px; } nav a:hover { background-color: #ddd; color: black; } .content { padding: 16px; } .tabcontent { display: none; padding: 6px 12px; border: 1px solid #ccc; border-top: none; } .tabcontent.active { display: block; } </style>
+</head>
+<body>
+
+<header>
+    <h1>Мой веб-сайт</h1>
+</header>
+
+<nav>
+    <a href="javascript:void(0)" class="tablink" onclick="openTab(event, 'Projects')">Проекты</a>
+    <a href="javascript:void(0)" class="tablink" onclick="openTab(event, 'Movies')">Любимые фильмы</a>
+    <a href="javascript:void(0)" class="tablink" onclick="openTab(event, 'Contacts')">Контакты</a>
+</nav>
+
+<div id="Projects" class="tabcontent">
+    <h3>Проекты</h3>
+    <p>Здесь вы можете описать ваши проекты.</p>
+</div>
+
+<div id="Movies" class="tabcontent">
+    <h3>Любимые фильмы</h3>
+    <p>Здесь вы можете перечислить ваши любимые фильмы.</p>
+</div>
+
+<div id="Contacts" class="tabcontent">
+    <h3>Контакты</h3>
+    <p>Здесь вы можете оставить контактные данные.</p>
+</div>
+
+<script> function openTab(evt, tabName) { var i, tabcontent, tablinks; // Показать текущий, скрыть остальные tabcontent = document.getElementsByClassName("tabcontent"); for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; } tablinks = document.getElementsByClassName("tablink"); for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); } // Показать выбранный раздел document.getElementById(tabName).style.display = "block"; evt.currentTarget.className += " active"; } // Открыть первый раздел по умолчанию document.getElementById("Projects").style.display = "block"; </script>
+
+</body>
+</html>
